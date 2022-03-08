@@ -1,16 +1,22 @@
 /* eslint-disable react/prop-types */
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
 import TimeContext from '../TimeContext'
 
-function TrackingCard({ data }) {
+function TrackingCard({ data, trackCategory }) {
+  const [bulletPointsActive, setBulletPointsActive] = useState(false)
   const { timeFrame } = useContext(TimeContext)
 
   return (
-    <div className="tracking-card">
+    <div className={`tracking-card tracking-card--${trackCategory}`}>
+      <div className="tracking-card__icon">
+        <img src={`/images/icon-${trackCategory}.svg`} alt={data.title} />
+      </div>
       <div className="card-info">
         <h3 className="card-info__title">{data.title}</h3>
         <svg
+          onMouseEnter={() => setBulletPointsActive(true)}
+          onMouseLeave={() => setBulletPointsActive(false)}
           className="card-info__more"
           width="21"
           height="5"
@@ -18,7 +24,7 @@ function TrackingCard({ data }) {
         >
           <path
             d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
-            fill="#BBC0FF"
+            fill={bulletPointsActive ? 'white' : '#BBC0FF'}
             fillRule="evenodd"
           />
         </svg>
@@ -59,6 +65,7 @@ TrackingCard.propTypes = {
       })
     ),
   }).isRequired,
+  trackCategory: PropTypes.string.isRequired,
 }
 
 export default TrackingCard

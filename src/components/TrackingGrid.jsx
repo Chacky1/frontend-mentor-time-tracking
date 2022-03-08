@@ -1,12 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import TrackingCard from './TrackingCard'
+import categoryTitleToImageName from '../utils/categoryTitleToImageName'
 
 function TrackingGrid({ dataSet }) {
   return (
     <div className="tracking-grid">
       {dataSet.map((category) => (
-        <TrackingCard key={category.title} data={category} />
+        <TrackingCard
+          key={category.title}
+          data={category}
+          trackCategory={categoryTitleToImageName(category.title)}
+        />
       ))}
     </div>
   )
