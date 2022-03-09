@@ -11,8 +11,10 @@ function Profile() {
           src="/images/image-jeremy.png"
           alt="profile"
         />
-        <p className="profile-content__report">Report for</p>
-        <h2 className="profile-content__username">Jeremy Robson</h2>
+        <div className="profile-content__username">
+          <p>Report for</p>
+          <h2>Jeremy Robson</h2>
+        </div>
       </div>
       <ul className="profile__timeframes">
         <li className={timeFrame === 'daily' ? 'active' : ''}>

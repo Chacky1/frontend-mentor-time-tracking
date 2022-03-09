@@ -7,6 +7,14 @@
     overflow: hidden;
     white-space: nowrap;
 
+    @media screen and (max-width: 650px) {
+        width: 45%;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 100%;
+    }
+
     &--work {
         background-color: $work;
     }
@@ -48,6 +56,11 @@
     margin-top: 3rem;
     z-index: 2;
 
+    @media screen and (max-width: 500px) {
+        grid-template-rows: 2fr 3fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
     &__title {
         font-size: 1rem;
         grid-row-start: 1;
@@ -61,6 +74,11 @@
         grid-row-end: span 1;
         grid-column-start: 2;
         grid-column-end: span 1;
+
+        @media screen and (max-width: 500px) {
+            display: flex;
+            justify-content: flex-end;
+        }
     }
 
     &__current {
@@ -70,6 +88,10 @@
         grid-row-end: span 1;
         grid-column-start: 1;
         grid-column-end: span 3;
+
+        @media screen and (max-width: 500px) {
+            grid-column-end: span 1;
+        }
     }
 
     &__previous {
@@ -81,6 +103,14 @@
         grid-row-end: span 1;
         grid-column-start: 1;
         grid-column-end: span 3;
+
+        @media screen and (max-width: 500px) {
+            display: flex;
+            justify-content: flex-end;
+            grid-row-start: 2;
+            grid-column-start: 2;
+            grid-column-end: span 1;
+        }
     }
 
     &:hover {

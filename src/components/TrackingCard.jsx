@@ -14,20 +14,21 @@ function TrackingCard({ data, trackCategory }) {
       </div>
       <div className="card-info">
         <h3 className="card-info__title">{data.title}</h3>
-        <svg
-          onMouseEnter={() => setBulletPointsActive(true)}
-          onMouseLeave={() => setBulletPointsActive(false)}
-          className="card-info__more"
-          width="21"
-          height="5"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
-            fill={bulletPointsActive ? 'white' : '#BBC0FF'}
-            fillRule="evenodd"
-          />
-        </svg>
+        <div className="card-info__more">
+          <svg
+            onMouseEnter={() => setBulletPointsActive(true)}
+            onMouseLeave={() => setBulletPointsActive(false)}
+            width="21"
+            height="5"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+              fill={bulletPointsActive ? 'white' : '#BBC0FF'}
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
         <p className="card-info__current">
           {data.timeframes[timeFrame].current}hrs
         </p>
