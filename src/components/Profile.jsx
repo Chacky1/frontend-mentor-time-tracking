@@ -8,7 +8,7 @@ function Profile() {
       <div className="profile-content">
         <img
           className="profile-content__image"
-          src="/images/image-jeremy.png"
+          src="./images/image-jeremy.png"
           alt="profile"
         />
         <div className="profile-content__username">

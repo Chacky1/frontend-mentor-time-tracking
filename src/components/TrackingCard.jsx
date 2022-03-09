@@ -10,7 +10,7 @@ function TrackingCard({ data, trackCategory }) {
   return (
     <div className={`tracking-card tracking-card--${trackCategory}`}>
       <div className="tracking-card__icon">
-        <img src={`/images/icon-${trackCategory}.svg`} alt={data.title} />
+        <img src={`./images/icon-${trackCategory}.svg`} alt={data.title} />
       </div>
       <div className="card-info">
         <h3 className="card-info__title">{data.title}</h3>
